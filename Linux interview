@@ -1,0 +1,108 @@
+# What is the difference between absolute and relative paths in Linux?
+
+
+# How do you check the available disk space in Linux?
+Through the df command.
+
+# Explain the process of creating a symbolic link in Linux.
+Creating a symbolic link (or symlink) in Linux involves creating a special type of file that points to another file or directory. Symbolic links are similar to shortcuts in Windows or aliases in macOS, and they provide a way to reference files or directories by a different name or location. 
+"A symbolic link in Linux is like a shortcut or reference to another file or directory. To create one, you use the 'ln -s' command with the target file or directory and the desired link name. For example, 'ln -s /path/to/target /path/to/link' creates a symbolic link named 'link' pointing to 'target'. It's a way to make files or directories accessible under a different name or location."
+
+# How would you find all files modified within the last 24 hours in a directory?
+To find all files modified within the last 24 hours in a directory in Linux, you can use the find command with the -mtime option. Here's the command you can use:
+
+bash
+find /path/to/directory -type f -mtime -1
+Let me break down this command:
+
+find: The command used to search for files and directories.
+/path/to/directory: Replace this with the actual path to the directory you want to search within.
+-type f: This option specifies that you want to search for files (not directories).
+-mtime -1: This is the key part. It tells find to search for files whose modification time (mtime) is less than 1 day ago. The -1 means within the last 24 hours. If you wanted to search for files modified in the last 48 hours, you would use -2, and so on.
+When you run this command, it will list all files in the specified directory and its subdirectories that have been modified in the last 24 hour.
+
+# Describe the usage and syntax of the "grep" command in Linux.
+The grep command in Linux is a powerful tool used for searching and pattern matching within text. It stands for "Global Regular Expression Print," and it allows you to search for specific strings or patterns in files or input streams. Here's an overview of its usage and 
+Examples:
+
+Search for a simple text pattern in a file:
+
+bash
+Copy code
+grep "search_term" file.txt
+Search for a pattern case-insensitively:
+
+bash
+Copy code
+grep -i "pattern" file.txt
+Search for a pattern recursively in all files under a directory:
+
+bash
+Copy code
+grep -r "pattern" /path/to/directory
+Show filenames containing the pattern (useful when searching multiple files):
+
+bash
+Copy code
+grep -l "pattern" *.txt
+Count the number of lines containing the pattern:
+
+bash
+Copy code
+grep -c "pattern" file.txt
+
+#Write a shell script to display the current date and time.
+You can create a simple shell script to display the current date and time using the date command in Linux. Here's a basic example of such a script:
+
+bash
+Copy code
+#!/bin/bash
+
+# Get the current date and time
+current_datetime=$(date)
+
+# Display the current date and time
+echo "Current date and time: $current_datetime"
+
+
+
+#What is the purpose of the "ifconfig" command in Linux?
+The ifconfig (interface configuration) command in Linux is used to configure and display information about network interfaces on your system
+
+#How can you change the ownership of a file in Linux using the "chown" command?
+
+#Explain the difference between TCP and UDP protocols.
+TCP is a reliable, connection-oriented protocol that guarantees ordered and error-free data transmission. UDP, on the other hand, is a connectionless, less reliable protocol that offers lower overhead and lower latency. TCP is ideal for applications like web browsing and file transfers, while UDP suits real-time applications like gaming and streaming where speed is critical."
+
+#How do you add a user to a group in Linux using the "usermod" command?
+o add a user to a group in Linux using the "usermod" command, you can use the following syntax:
+
+bash
+Copy code
+sudo usermod -a -G groupname username
+Here's what each part of the command does:
+
+sudo: This is used to run the command with superuser (root) privileges, as modifying user groups typically requires administrative permissions.
+
+usermod: This is the command itself, used to modify user account settings.
+
+-a: This option stands for "append." It is used to add the user to the specified group without removing them from any other groups they might belong to.
+
+-G groupname: This option specifies the group to which you want to add the user. Replace groupname with the name of the group you want to add the user to.
+
+username: This is the username of the user you want to add to the group.
+
+Here's an example:
+
+Let's say you want to add a user named "john" to a group called "developers." You would use the following command:
+
+bash
+Copy code
+sudo usermod -a -G developers john
+After running this command, the user "john" will be added to the "developers" group, allowing them to access resources and files that are accessible to members of that group.
+
+
+
+
+
+
